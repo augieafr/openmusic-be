@@ -38,6 +38,14 @@ exports.up = (pgm) => {
       references: 'albums(id)',
       onDelete: 'CASCADE'
     },
+    created_at: {
+      type: 'TEXT',
+      notNull: true,
+    },
+    updated_at: {
+      type: 'TEXT',
+      notNull: true
+    }
   })
 };
 
