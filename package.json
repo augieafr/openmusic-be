@@ -1,0 +1,35 @@
+{
+  "name": "openmusic-be",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "node-pg-migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/augieafr/openmusic-be.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/augieafr/openmusic-be/issues"
+  },
+  "homepage": "https://github.com/augieafr/openmusic-be#readme",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.3.2",
+    "dotenv": "^16.4.7",
+    "joi": "^17.13.3",
+    "nanoid": "^3.1.20",
+    "node-pg-migrate": "^7.9.0",
+    "pg": "^8.13.1"
+  }
+}
