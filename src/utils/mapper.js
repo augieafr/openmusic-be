@@ -7,14 +7,14 @@ const generalMapDbToModel = (dbModel) => {
   };
 };
 
-const mapAlbumDbToModel = (dbModel) => {
+const mapSongDbToModel = (dbModel) => {
   const { id, album_id, ...otherProperties } = dbModel;
 
   return {
     id,
-    album_id,
+    albumId: album_id,
     ...generalMapDbToModel(otherProperties),
   };
 };
 
-module.exports = { generalMapDbToModel, mapAlbumDbToModel }
+module.exports = { generalMapDbToModel, mapSongDbToModel };

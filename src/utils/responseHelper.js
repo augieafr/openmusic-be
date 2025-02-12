@@ -9,13 +9,13 @@
 const successResponse = (h, data, message, statusCode = 200) => {
   const response = {
     status: 'success',
-    data: data
-  }
+    data: data,
+  };
   if (message) {
-    response.message = message
+    response.message = message;
   }
 
   return h.response(response).code(statusCode);
-}
+};
 
 module.exports = { successResponse };
