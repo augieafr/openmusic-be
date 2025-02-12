@@ -7,7 +7,7 @@ class AlbumsHandler {
 
     this.getAlbumsByIdHandler = this.getAlbumsByIdHandler.bind(this);
     this.postAlbumHandler = this.postAlbumHandler.bind(this);
-    this.putAlbumHandlerById = this.putAlbumHandlerById.bind(this);
+    this.putAlbumByIdHandler = this.putAlbumByIdHandler.bind(this);
   }
 
   async getAlbumsByIdHandler(request) {
@@ -28,12 +28,14 @@ class AlbumsHandler {
     return successResponse(h, { albumId }, null, 201);
   }
 
-  async putAlbumHandlerById(request, h) {
+  async putAlbumByIdHandler(request, h) {
     this._validator.validateAlbumPayload(request.payload);
     const { id } = request.params;
     await this._service.editAlbumById(id, request.payload);
     return successResponse(h, null, 'Berhasil mengubah album');
   }
+
+  
 }
 
 module.exports = AlbumsHandler;
