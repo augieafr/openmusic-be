@@ -8,6 +8,7 @@ class AlbumsHandler {
     this.getAlbumsByIdHandler = this.getAlbumsByIdHandler.bind(this);
     this.postAlbumHandler = this.postAlbumHandler.bind(this);
     this.putAlbumByIdHandler = this.putAlbumByIdHandler.bind(this);
+    this.deleteAlbumByIdHandler = this.deleteAlbumByIdHandler.bind(this);
   }
 
   async getAlbumsByIdHandler(request) {
@@ -35,7 +36,12 @@ class AlbumsHandler {
     return successResponse(h, null, 'Berhasil mengubah album');
   }
 
-  
+  async deleteAlbumByIdHandler(request, h) {
+    const { id } = request.params;
+    console.log("id", id);
+    await this._service.deleteAlbumById(id);
+    return successResponse(h, null, 'Berhasil menghapus album');
+  }
 }
 
 module.exports = AlbumsHandler;
